@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Website Copywriting — Kaylee Eastman</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Project Page Styles */
+      .project-page {
+        padding-top: calc(var(--section-pad-y) + 84px);
+        background: linear-gradient(180deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
+        background-attachment: fixed;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      .project-page .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .project-title {
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: white;
+      }
+
+      /* Overview Row */
+      .overview-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+
+      /* Second Row for Skills and Deliverables */
+      .second-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+
+      .overview-card {
+        background: #f8fafc;
+        padding: 24px;
+        border-radius: var(--card-radius);
+        height: 100%;
+      }
+
+      .overview-card h3 {
+        color: var(--headline-green);
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+      }
+
+      .overview-card ul {
+        padding-left: 20px;
+        margin-top: 12px;
+      }
+
+      .overview-card li {
+        margin-bottom: 8px;
+      }
+
+      /* Impact Section */
+      .impact-section {
+        margin: 48px 0 0;
+        padding: 32px;
+        background: #f8fafc;
+        border-radius: var(--card-radius);
+      }
+
+      .impact-section h2 {
+        margin-bottom: 24px;
+        color: var(--headline-green);
+      }
+
+      .impact-section p {
+        line-height: 1.6;
+      }
+
+      /* Content Showcase */
+      .content-showcase {
+        margin: 64px 0;
+      }
+
+      .content-section {
+        background: white;
+        padding: 32px;
+        border-radius: var(--card-radius);
+        margin-bottom: 32px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      }
+
+      .sample {
+        padding: 24px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .sample:first-child {
+        padding-top: 0;
+      }
+
+      .sample:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .content-section h3 {
+        color: var(--headline-green);
+        margin-bottom: 24px;
+        font-size: 1.4rem;
+      }
+
+      .content-section p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .content-section p:last-child {
+        margin-bottom: 0;
+      }
+
+      .content-section:last-child {
+        margin-bottom: 48px;
+      }
+
+      .content-section.introduction {
+        background: #f8fafc;
+        border-left: 4px solid var(--headline-green);
+        margin-bottom: 24px;
+      }
+
+      .intro-text {
+        font-weight: 700;
+        color: var(--headline-green);
+      }
+
+      .content-section.introduction p {
+        margin-bottom: 16px;
+      }
+
+      .content-section.conclusion p:last-child {
+        margin-bottom: 0;
+      }
+
+      .external-link {
+        color: #6FD6CD;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s ease;
+      }
+
+      .external-link:hover {
+        color: #5BDDAD;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 900px) {
+        .overview-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .second-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        
+        .project-page .container {
+          width: 95%;
+          padding: 0 10px;
+        }
+
+        .content-section {
+          padding: 24px;
+        }
+
+        .project-title {
+          font-size: 2rem;
+        }
+
+        .impact-section {
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .project-title {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar" role="banner">
+      <nav class="container nav-inner" aria-label="Primary">
+        <a class="brand" href="../index.html">
+          <img src="../Images/hero-images/hero-img_teal-white-headshot-illustration.svg" alt="Kaylee's logo" class="nav-logo" />
+          <span>Kaylee Eastman</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= PROJECT CONTENT ================= -->
+    <main class="section project-page">
+      <div class="container">
+        <h1 class="project-title">Website Copywriting for Business and Marketing Agency</h1>
+        
+        <!-- Project Overview Row -->
+        <section class="project-section overview-section">
+          <div class="overview-row">
+            <div class="overview-card">
+              <h3>My Role</h3>
+              <p style="color: #20726b;"><strong>Website Content Strategist & Copywriter</strong></p>
+              <p style="color: #20726b;">I served as the lead copywriter, responsible for developing all written content across 21 service subpages of a full-scale business and marketing agency website.</p>
+            </div>
+            <div class="overview-card">
+              <h3>The Problem</h3>
+              <p style="color: #20726b;">The client needed to clearly communicate the value of their wide range of services to potential customers. The client's previous website lacked clear, well-structured messaging, which made it difficult for potential customers to understand exactly what services the agency offered.</p>
+            </div>
+          </div>
+
+          <!-- Second Row: Skills & Expertise Applied and Why it mattered -->
+          <div class="second-row">
+            <div class="overview-card">
+              <h3>Skills & Expertise Applied</h3>
+              <ul style="color: #20726b;">
+                <li>Copywriting for web and service-based content</li>
+                <li>Adapting copy to an established brand voice</li>
+                <li>SEO-conscious content writing</li>
+                <li>Proofreading and editing for clarity and consistency</li>
+                <li>Ensuring consistency across a large content set</li>
+              </ul>
+            </div>
+            <div class="overview-card">
+              <h3>Why it Mattered</h3>
+              <p style="color: #20726b;">Clarifying the agency's services and benefits made it easy for prospects to find the right solution and understand value quickly. Consistent, benefit-focused messaging strengthened credibility, improved SEO discoverability across 21 service subpages, and aligned calls-to-action to drive more qualified leads.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Content Showcase -->
+        <section class="content-showcase">
+          <div class="content-section introduction">
+            <p class="intro-text">The following excerpts are samples of website copy I wrote for Sopra Solutions. These passages are taken directly from the live website.</p>
+            <p class="intro-text">Visit <a href="https://soprasolutions.com" target="_blank" rel="noopener" class="external-link">soprasolutions.com</a> to see the full website—all webcopy on the subpages under business solutions, creative services, and executive coaching are my work.</p>
+          </div>
+
+          <div class="content-section samples">
+            <div class="sample">
+              <h3 style="color: #20726b;">Strategy & Growth</h3>
+              <p style="color: #20726b;">"We help define how your company will generate value—not just in the short term, but for sustainable growth. This involves pinpointing customer needs, assessing market potential, and developing a differentiated value proposition that sets your business apart. Our approach ensures your business model is aligned with current market demands and agile enough for future challenges."</p>
+            </div>
+
+            <div class="sample">
+              <h3 style="color: #20726b;">Strategic Partnerships</h3>
+              <p style="color: #20726b;">"By creating strategic technology partnerships, you get to stay ahead. We help you identify and engage with technology vendors and solution providers that align with your business objectives. Leveraging advanced technologies and innovations, you can gain a competitive edge and enhance your business capabilities."</p>
+              <p style="color: #20726b;">"Our team of experts provides personalized guidance throughout the partnership identification process. We help you navigate the complexities of forming strategic alliances, ensuring that you make informed decisions that benefit your business."</p>
+            </div>
+
+            <div class="sample">
+              <h3 style="color: #20726b;">Intellectual Property</h3>
+              <p style="color: #20726b;">"Protecting your innovations is just the beginning. Success lies in using those innovations to their fullest potential. We help businesses identify what elements of their product are patentable, provide guidance on filing, and advise on how to leverage IP as a competitive advantage. Beyond protection, we assist with integrating new technologies into your existing processes, ensuring they deliver the intended value and drive sustainable competitive differentiation."</p>
+            </div>
+
+            <div class="sample">
+              <h3 style="color: #20726b;">Branding & Messaging</h3>
+              <p style="color: #20726b;">"At Sopra Solutions, we establish a solid foundation for your mighty mission through our comprehensive Branding and Messaging services. Whether you have a pre-existing brand looking to refresh your image or starting from scratch, we're here to elevate your brand-building activities and create lasting recognition and brand equity."</p>
+            </div>
+
+            <div class="sample">
+              <h3 style="color: #20726b;">Technology & Operations</h3>
+              <p style="color: #20726b;">"We manage your SaaS platforms, including CRM systems and other essential tools, to streamline operations and enhance productivity. Our expertise in SaaS operations management ensures that your platforms are utilized efficiently to support your marketing efforts. We help you leverage technology to improve performance and achieve your goals."</p>
+              <p style="color: #20726b;">"Our services are tailored to your unique business needs and objectives, ensuring that we deliver solutions that align with your goals. We take the time to understand your specific requirements and provide customized strategies that drive results."</p>
+            </div>
+          </div>
+
+            <section class="content-showcase">
+          <div class="content-section introduction">
+            <p class="intro-text">Visit <a href="https://soprasolutions.com" target="_blank" rel="noopener" class="external-link">soprasolutions.com</a> to see the full website—all webcopy on the subpages under business solutions, creative services, and executive coaching are my work.</p>
+          </div>
+          
+        </section>
+
+        
+
+        <!-- Back to Portfolio -->
+        <section class="project-section">
+                  <!-- Back to Portfolio -->
+          <a href="../index.html#portfolio" class="btn btn-primary">← Back to Homepage</a>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      // Mobile nav toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        const willShow = !navLinks.classList.contains('show');
+        navLinks.classList.toggle('show');
+        hamburger.setAttribute('aria-expanded', String(willShow));
+      });
+    </script>
+  </body>
+</html>

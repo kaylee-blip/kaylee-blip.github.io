@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaylee — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar" role="banner">
+      <nav class="container nav-inner" aria-label="Primary">
+        <a class="brand" href="#home">
+          <img src="Images/hero-images/hero-img_teal-white-headshot-illustration.svg" alt="Kaylee's logo" class="nav-logo" />
+          <span>Kaylee Eastman</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact" class="btn-chip">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section class="section hero" id="home">
+      <div class="container two-col hero-row">
+        <!-- Left column: text -->
+        <div class="panel hero-left">
+          <h1>Kaylee Eastman</h1>
+          <p>I want to help businesses sell honestly and grow sustainably :)</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Get in Touch</a>
+            <a href="#portfolio" class="btn btn-outline">View Portfolio</a>
+          </div>
+        </div>
+        <!-- Right column: 2x2 image tiles -->
+        <div class="panel hero-right">
+          <div class="hero-images">
+            <div class="hero-row-tiles">
+              <img class="tile" src="Images/hero-images/hero-img_teal-white-headshot-illustration.svg" alt="Teal background with white headshot illustration" />
+              <img class="tile" src="Images/hero-images/hero-img_teal-headshot-illustration.svg" alt="White background with teal headshot outline" />
+            </div>
+            <div class="hero-row-tiles">
+              <img class="tile" src="Images/hero-images/hero-img_green-headshot-illustration.svg" alt="White background with green headshot outline" />
+              <img class="tile" src="Images/hero-images/hero-img_green-white-headshot-illustration.svg" alt="Green background with white headshot illustration" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT (per latest sketch) ================= -->
+    <section class="section section-white" id="about">
+      <div class="container">
+        <h2 class="section-title left" style="color: #5BDDAD;">About me</h2>
+
+        <div class="about-main-grid">
+          <!-- Left side: Photo only -->
+          <div class="about-left">
+            <div class="about-photo">
+              <img src="Images/kaylee-grad-teal.png" alt="Kaylee graduation photo" />
+            </div>
+          </div>
+
+          <!-- Right side: Content stack -->
+          <div class="about-right">
+            <!-- Top: About copy -->
+            <div class="about-copy" style="color: #20726b;">
+              <p>
+                I'm a marketing specialist who loves combining design and strategy to connect with audiences. I enjoy taking on the challenge of taking complex ideas and turning them into clear, engaging content.
+              </p>
+              <p>
+                I think what makes me different is how I balance the strategic and creative sides. It's all about clarity, consistency, and providing true value to the target audience at every touchpoint in the customer journey. My background in UX/UI also helps me think about the customer journey when planning marketing approaches.
+              </p>
+              <p>I really enjoy helping organizations find their unique voice in crowded markets, share meaningful stories, and create content that builds genuine connections with their audience.</p>
+            </div>
+
+            <!-- Bottom: Education and Badge side by side -->
+            <div class="about-bottom-section">
+              <!-- Education -->
+              <div class="about-edu" style="color: #20726b;">
+                <h3 class="subhead" style="color: #5BDDAD;">My Educational Background:</h3>
+                <ul class="edu-list">
+                  <li>Salem State University</li>
+                  <li>Bachelor of Science, Business Administration, Bertolon School of Business</li>
+                  <li>Concentration in Entrepreneurship, Minor in User Experience &amp; Interface Design</li>
+                  <li>Cumulative GPA: 3.8</li>
+                  <li>Magna Cum Laude</li>
+                </ul>
+              </div>
+
+              <!-- Badge -->
+              <div class="about-badges-wrapper">
+                <div class="about-badge">
+                  <img src="Images/word-tonic-badge.png" alt="Word Tonic Badge" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS (cards only, full container width) ================= -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title left on-gradient">Skills &amp; Services</h2>
+        <div class="skills-cards">
+          <article class="skill-card card-mint" style="background-color: #5BDDAD;">
+            <h3>Journey-Focused Marketing Strategy</h3>
+            <p>Create strategic narratives that align with brand goals, differentiate from competitors, and resonate with target audiences at every interaction.</p>
+          </article>
+          <article class="skill-card card-white">
+            <h3 style="color: #5BDDAD;">Content Research &amp; Development</h3>
+            <p style="color: #20726b;">Identify high-value opportunities through targeted research to deliver value across all customer journey stages with strategic content.</p>
+          </article>
+          <article class="skill-card card-white">
+            <h3 style="color: #5BDDAD;">Copywriting &amp; Messaging</h3>
+            <p style="color: #20726b;">Craft clear, compelling copy that speaks to audiences, drives action, and maintains brand voice across all formats.</p>
+          </article>
+          <article class="skill-card card-green" style="background-color: #6FD6CD;">
+            <h3>Graphic Design &amp; Layout</h3>
+            <p>Create visually cohesive materials where each element guides audiences through key messaging and toward specific calls to action.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PORTFOLIO (white) ================= -->
+    <section class="section section-white" id="portfolio">
+      <div class="container">
+        <h2 class="section-title left" style="color: #5BDDAD;">Portfolio</h2>
+        <ul class="portfolio-list">
+          <li class="portfolio-row">
+            <div class="portfolio-left">
+              <div class="portfolio-date" style="background-color: white; color: #5BDDAD; padding: 4px 8px; border-radius: 4px; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: inline-block; width: fit-content;">April 2025</div>
+              <div class="portfolio-title">Brochure Copywriting &amp; Design for Agency Sales Team</div>
+            </div>
+            <span class="portfolio-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"></polyline></svg>
+            </span>
+            <a class="btn btn-ghost" href="projects/brochure-project.html" target="_blank" rel="noopener">View in New Tab</a>
+          </li>
+          <li class="portfolio-row">
+            <div class="portfolio-left">
+              <div class="portfolio-date" style="background-color: white; color: #5BDDAD; padding: 4px 8px; border-radius: 4px; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: inline-block; width: fit-content;">May 2024</div>
+              <div class="portfolio-title">Website Copywriting for Business and Marketing Agency</div>
+            </div>
+            <span class="portfolio-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"></polyline></svg>
+            </span>
+            <a class="btn btn-ghost" href="projects/web-copy-project-clean.html" target="_blank" rel="noopener">View in New Tab</a>
+          </li>
+          <li class="portfolio-row">
+            <div class="portfolio-left">
+              <div class="portfolio-date" style="background-color: white; color: #5BDDAD; padding: 4px 8px; border-radius: 4px; font-size: 14px; font-weight: 600; margin-bottom: 8px; display: inline-block; width: fit-content;">May 2025</div>
+              <div class="portfolio-title">White Paper on How Businesses can Navigate Economic Downturn &amp; Supporting Infographic and Landing Page</div>
+            </div>
+            <span class="portfolio-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"></polyline></svg>
+            </span>
+            <a class="btn btn-ghost" href="projects/economic-white-paper.html" target="_blank" rel="noopener">View in New Tab</a>
+          </li>
+          <li class="portfolio-row">
+            <div class="portfolio-left">
+              <div class="portfolio-title">White paper, Webinar, and Marketing Campaign on the Responsible Adoption of Generative AI</div>
+            </div>
+            <span class="portfolio-arrow" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"></polyline></svg>
+            </span>
+            <span class="chip chip-outline">Coming Soon</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title left on-gradient">Get in Touch</h2>
+        <div class="contact-form-wrap">
+          <iframe
+            id="JotFormIFrame-250985273674065"
+            title="Kaylee Portfolio Contact Form"
+            onload="window.parent.scrollTo(0,0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen; payment"
+            src="https://form.jotform.com/eastmankaylee/kaylee-portfolio-contact-form"
+            frameborder="0"
+            style="min-width:100%;max-width:100%;height:539px;border:none;"
+            scrolling="no"
+          >
+          </iframe>
+          <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+          <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-250985273674065']", "https://form.jotform.com/")</script>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Mobile nav toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        const willShow = !navLinks.classList.contains('show');
+        navLinks.classList.toggle('show');
+        hamburger.setAttribute('aria-expanded', String(willShow));
+      });
+    </script>
+  </body>
+</html>

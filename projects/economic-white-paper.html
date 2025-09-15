@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>White Paper Project — Kaylee Eastman</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* Project Page Styles */
+      .project-page {
+        padding-top: calc(var(--section-pad-y) + 84px);
+        background: linear-gradient(180deg, var(--bg-grad-1), var(--bg-grad-2), var(--bg-grad-3));
+        background-attachment: fixed;
+        width: 100%;
+        min-height: 100vh;
+      }
+
+      .project-page .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .project-title {
+        text-align: center;
+        margin-bottom: 48px;
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: white;
+      }
+
+      /* Overview Row */
+      .overview-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 48px;
+      }
+
+      .overview-card {
+        background: #f8fafc;
+        padding: 24px;
+        border-radius: var(--card-radius);
+        height: 100%;
+      }
+
+      .overview-card h3 {
+        color: var(--headline-green);
+        margin-bottom: 16px;
+        font-size: 1.2rem;
+      }
+
+      .overview-card ul {
+        padding-left: 20px;
+        margin-top: 12px;
+      }
+
+      .overview-card li {
+        margin-bottom: 8px;
+      }
+
+      .overview-card p {
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      .overview-card p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Skills Section */
+      .skills-section {
+        margin: 48px 0;
+        padding: 32px;
+        background: #f8fafc;
+        border-radius: var(--card-radius);
+      }
+
+      .skills-section h2 {
+        margin-bottom: 24px;
+        color: var(--headline-green);
+      }
+
+      .skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+
+      .skills-list li {
+        padding: 16px;
+        background: white;
+        border-radius: var(--card-radius);
+        line-height: 1.5;
+      }
+
+      @media (max-width: 768px) {
+        .skills-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Deliverables Section */
+      .deliverables-section {
+        padding: 0 0 48px 0;
+      }
+
+      .deliverable-showcase {
+        margin-bottom: 64px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .deliverable-showcase h3 {
+        text-align: center;
+        margin-bottom: 8px;
+        color: white;
+        font-size: 1.4rem;
+        padding: 16px 32px;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .deliverable-content {
+        background: white;
+        padding: 32px;
+        border-radius: var(--card-radius);
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      .deliverable-content ul {
+        padding-left: 20px;
+        margin: 16px 0;
+      }
+
+      .deliverable-content li {
+        margin-bottom: 12px;
+        line-height: 1.5;
+      }
+
+      /* Project Deliverables Grid */
+      .deliverable-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .deliverable-card {
+        background: white;
+        padding: 24px;
+        border-radius: var(--card-radius);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      }
+
+      .deliverable-card h4 {
+        color: var(--headline-green);
+        margin: 0 0 16px;
+        font-size: 1.1rem;
+      }
+
+      .deliverable-card p {
+        margin: 0;
+      }
+
+      .deliverables-title {
+        color: var(--headline-green);
+        font-size: 1.4rem;
+        margin-bottom: 24px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 900px) {
+        .overview-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        
+        .project-page .container {
+          width: 95%;
+          padding: 0 10px;
+        }
+
+        .deliverable-content {
+          padding: 24px;
+        }
+
+        .deliverable-grid {
+          grid-template-columns: 1fr !important;
+        }
+
+        .mobile-stack {
+          flex-direction: column !important;
+          padding: 32px 24px !important;
+        }
+
+        .mobile-stack > div {
+          width: 100% !important;
+          margin: 0 !important;
+          text-align: center;
+        }
+
+        .mobile-stack > div:not(:last-child) {
+          margin-bottom: 24px !important;
+        }
+
+        .mobile-stack svg {
+          transform: rotate(90deg);
+        }
+
+        .mobile-stack .btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* Carousel Styles */
+      .carousel-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        border-radius: var(--card-radius);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        overflow: hidden;
+      }
+
+      .carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 500px;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.3s ease;
+        height: 100%;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+      }
+
+      .carousel-slide img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        border-radius: var(--card-radius);
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: var(--headline-green);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 10;
+        transition: background-color 0.2s ease;
+      }
+
+      .carousel-button:hover {
+        background: #4bc997;
+      }
+
+      .carousel-button.prev {
+        left: 10px;
+      }
+
+      .carousel-button.next {
+        right: 10px;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+      }
+
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+      }
+
+      .carousel-dot.active {
+        background: white;
+      }
+
+      @media (max-width: 900px) {
+        .carousel-container {
+          max-width: 100%;
+        }
+
+        .carousel-slide img {
+          max-height: 400px;
+        }
+
+        .carousel-nav {
+          bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar" role="banner">
+      <nav class="container nav-inner" aria-label="Primary">
+        <a class="brand" href="../index.html">
+          <img src="../Images/hero-images/hero-img_teal-white-headshot-illustration.svg" alt="Kaylee's logo" class="nav-logo" />
+          <span>Kaylee Eastman</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html#home">Home</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= PROJECT CONTENT ================= -->
+    <main class="section project-page">
+      <div class="container">
+        <h1 class="project-title">White Paper on How Businesses can Navigate Economic Downturn &amp; Supporting Infographic and Landing Page</h1>
+        
+        <!-- Project Overview Row -->
+        <section class="project-section overview-section">
+          <div class="overview-row">
+            <div class="overview-card">
+              <h3>My Role</h3>
+              <p style="color: #20726b;"><strong>Content Marketing Specialist (Research, Writing, Design)</strong></p>
+              <p style="color: #20726b;"> I created a comprehensive white paper for a business operations and marketing agency, along with supporting materials to promote it. This project involved researching and writing the white paper, designing an accompanying infographic that visualized key points, and developing a landing page to distribute the content and engage potential clients.</p>
+            </div>
+            <div class="overview-card">
+              <h3>The Challenge</h3>
+              <p style="color: #20726b;"> The client needed to establish themselves as a trusted advisor to businesses facing economic uncertainty. They required assets that would demonstrate their expertise while providing valuable insights for potential clients navigating recessions, stagflation, and other market downturns.</p>
+            </div>
+          </div>
+
+          <!-- Second Row: Skills and Deliverables -->
+          <div class="overview-row">
+            <div class="overview-card">
+              <h3>Skills & Expertise Applied</h3>
+              <ul style="color: #20726b; padding-left: 20px; margin: 16px 0;">
+                <li style="margin-bottom: 12px; line-height: 1.5;">White paper research and long-form content writing</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Synthesizing complex economic and business concepts</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Social media content creation and carousel design</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Content repurposing for different platforms and audiences</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Copywriting for conversion-focused landing pages</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Web design and landing page development in EngageBay</li>
+                <li style="margin-bottom: 12px; line-height: 1.5;">Proofreading and editing for clarity and consistency</li>
+              </ul>
+            </div>
+            <div class="overview-card">
+              <h3>Deliverables</h3>
+              <ul style="color: #20726b;">
+                <li><strong>White Paper:</strong> 18-page comprehensive analysis titled "How Growth-Focused Companies Win in Uncertain Times"</li>
+                <li><strong>Infographic:</strong> Visual summary of key findings and actionable insights</li>
+                <li><strong>Landing Page:</strong> Dedicated promotional page with optimized user experience</li>
+                <li><strong>LinkedIn Carousel:</strong> 10-slide social media carousel repurposing key insights for LinkedIn engagement</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Divider -->
+        <div style="width: 100%; height: 2px; background: white; margin: 48px 0 24px 0; opacity: 0.8;"></div>
+
+        <!-- Deliverables Section -->
+        <section class="project-section deliverables-section">
+          <!-- White Paper -->
+          <div class="deliverable-showcase">
+            <h3>White Paper</h3>
+            <div class="deliverable-content">
+              <p style="color: #20726b;"><strong>Title:</strong> "How Growth-Focused Companies Win in Uncertain Times: The Momentum Advantage During Stagflation, Recessions, and Down Markets"</p>
+              <p style="color: #20726b;"><strong>Length:</strong> 18 pages</p>
+              <ul style="color: #20726b;">
+                <li>Conducted in-depth research using reputable sources to analyze business strategies during economic downturns</li>
+                <li>Synthesized historical data, case studies, and strategies into a cohesive narrative</li>
+                <li>Framed insights to establish the agency as a thought leader for businesses planning in uncertain markets</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- LinkedIn Carousel -->
+          <div class="deliverable-showcase">
+            <h3>LinkedIn Social Media Carousel</h3>
+            <div class="deliverable-content">
+              <p style="color: #20726b; margin-bottom: 24px;">I created a 10-slide LinkedIn carousel to promote the white paper on social media. This carousel extracted key insights from the research and presented them in a visually engaging, social media-appropriate format to drive awareness and engagement.</p>
+              
+              <div class="carousel-container">
+                <div class="carousel-wrapper">
+                  <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/1.png" alt="LinkedIn Carousel Slide 1" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/2.png" alt="LinkedIn Carousel Slide 2" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/3.png" alt="LinkedIn Carousel Slide 3" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/4.png" alt="LinkedIn Carousel Slide 4" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/5.png" alt="LinkedIn Carousel Slide 5" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/6.png" alt="LinkedIn Carousel Slide 6" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/7.png" alt="LinkedIn Carousel Slide 7" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/8.png" alt="LinkedIn Carousel Slide 8" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/9.png" alt="LinkedIn Carousel Slide 9" />
+                    </div>
+                    <div class="carousel-slide">
+                      <img src="../Images/Turning challenges into growth - Sopra Solution Linkedin Carousel/10.png" alt="LinkedIn Carousel Slide 10" />
+                    </div>
+                  </div>
+                </div>
+                
+                <button class="carousel-button prev" id="prevBtn" aria-label="Previous slide">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                
+                <button class="carousel-button next" id="nextBtn" aria-label="Next slide">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+                
+                <div class="carousel-nav" id="carouselNav">
+                  <div class="carousel-dot active" data-slide="0"></div>
+                  <div class="carousel-dot" data-slide="1"></div>
+                  <div class="carousel-dot" data-slide="2"></div>
+                  <div class="carousel-dot" data-slide="3"></div>
+                  <div class="carousel-dot" data-slide="4"></div>
+                  <div class="carousel-dot" data-slide="5"></div>
+                  <div class="carousel-dot" data-slide="6"></div>
+                  <div class="carousel-dot" data-slide="7"></div>
+                  <div class="carousel-dot" data-slide="8"></div>
+                  <div class="carousel-dot" data-slide="9"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Infographic -->
+          <div class="deliverable-showcase">
+            <h3>Supporting Infographic</h3>
+            <div class="deliverable-content">
+              <ul style="color: #20726b;">
+                <li>Extracted and distilled key findings and data points from the white paper</li>
+                <li>Designed a visually compelling, brand-aligned infographic that communicated complex insights in a simple, engaging way</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Landing Page -->
+          <div class="deliverable-showcase">
+            <h3>Supporting Landing Page</h3>
+            <div class="deliverable-content">
+              <ul style="color: #20726b;">
+                <li>Wrote the copy for a dedicated landing page to promote the white paper</li>
+                <li>Designed and developed the page in EngageBay, ensuring alignment with brand visuals and user experience best practices</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Landing Page Section -->
+        <section class="project-section deliverable-showcase">
+          <div class="mobile-stack" style="background: var(--headline-green); padding: 24px; border-radius: var(--card-radius); display: flex; justify-content: space-between; align-items: center; max-width: 900px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <div style="width: 50%;">
+              <p style="margin: 0; color: white; font-size: 1.4rem;"><strong>Get free, ungated access to the white paper and infographic on the landing page</strong></p>
+            </div>
+            <div style="display: flex; align-items: center; margin: 0 24px;">
+              <svg viewBox="0 0 24 24" width="44" height="44" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="20" y2="12"/>
+                <polyline points="14 6 20 12 14 18"></polyline>
+              </svg>
+            </div>
+            <div style="margin-left: 0;">
+              <a href="https://soprasolutions.eb-sites.com/momentum-advantage-growth-whitepaper" target="_blank" rel="noopener" class="btn btn-primary" style="display: inline-block; white-space: nowrap;">Visit Landing Page</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Back to Portfolio -->
+        <a href="../index.html#portfolio" class="btn btn-primary">← Back to Homepage</a>
+      </div>
+    </main>
+
+    <script>
+      // Mobile nav toggle
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('nav-links');
+      hamburger.addEventListener('click', () => {
+        const willShow = !navLinks.classList.contains('show');
+        navLinks.classList.toggle('show');
+        hamburger.setAttribute('aria-expanded', String(willShow));
+      });
+
+      // Carousel functionality
+      let currentSlide = 0;
+      const totalSlides = 10;
+      const carouselTrack = document.getElementById('carouselTrack');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = document.querySelectorAll('.carousel-dot');
+
+      function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        carouselTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+      });
+
+      // Touch/swipe support for mobile
+      let startX = 0;
+      let endX = 0;
+
+      carouselTrack.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      carouselTrack.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        const diffX = startX - endX;
+        
+        if (Math.abs(diffX) > 50) { // Minimum swipe distance
+          if (diffX > 0) {
+            nextSlide(); // Swipe left - go to next
+          } else {
+            prevSlide(); // Swipe right - go to previous
+          }
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+    </script>
+  </body>
+</html>
